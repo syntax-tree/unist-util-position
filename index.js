@@ -11,12 +11,34 @@
 /**
  * Factory to get a position at `type`.
  *
+ * @example
+ *   positionFactory('start'); // Function
+ *
+ *   positionFactory('end'); // Function
+ *
  * @param {string} type - Either `'start'` or `'end'`.
  * @return {function(Node): Object}
  */
 function positionFactory(type) {
     /**
      * Get a position in `node` at a bound `type`.
+     *
+     * @example
+     *   // When bound to `start`.
+     *   start({
+     *     start: {
+     *       line: 1,
+     *       column: 1
+     *     }
+     *   }); // {line: 1, column: 1}
+     *
+     *   // When bound to `end`.
+     *   end({
+     *     end: {
+     *       line: 1,
+     *       column: 2
+     *     }
+     *   }); // {line: 1, column: 2}
      *
      * @param {Node} node - Node to check.
      * @return {Object} - Position at `type` in `node`, or
@@ -43,6 +65,20 @@ var position = {
 
 /**
  * Detect if a node was available in the original document.
+ *
+ * @example
+ *   generated(); // true
+ *
+ *   generated({
+ *     start: {
+ *       line: 1,
+ *       column: 1
+ *     },
+ *     end: {
+ *       line: 1,
+ *       column: 2
+ *     }
+ *   }); // false
  *
  * @param {Node} node - Node to test.
  * @return {boolean} - Whether or not `node` is generated.
