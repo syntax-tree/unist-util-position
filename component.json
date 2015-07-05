@@ -1,6 +1,6 @@
 {
   "name": "mdast-util-position",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Utility to get the position of mdast nodes",
   "license": "MIT",
   "keywords": [
