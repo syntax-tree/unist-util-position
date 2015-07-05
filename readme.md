@@ -17,6 +17,11 @@ npm install mdast-util-position
 module, [uncompressed](mdast-util-position.js) and
 [compressed](mdast-util-position.min.js).
 
+*   Supports index-based positional information patched by
+    [**mdast-range**](https://github.com/wooorm/mdast-range);
+
+*   Supports [`indent`](https://github.com/wooorm/mdast/blob/master/doc/nodes.md#location).
+
 ## Usage
 
 ```js

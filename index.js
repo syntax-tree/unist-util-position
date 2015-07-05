@@ -49,7 +49,9 @@ function positionFactory(type) {
 
         return {
             'line': pos.line || null,
-            'column': pos.column || null
+            'column': pos.column || null,
+            'indent': pos.indent || null,
+            'offset': isNaN(pos.offset) ? null : pos.offset
         };
     };
 }

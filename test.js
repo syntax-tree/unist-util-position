@@ -17,11 +17,15 @@ var properties = {
     'position': {
         'start': {
             'line': 1,
-            'column': 1
+            'column': 1,
+            'indent': [],
+            'offset': 0
         },
         'end': {
             'line': 1,
-            'column': 2
+            'column': 2,
+            'indent': [],
+            'offset': 1
         }
     }
 };
@@ -41,7 +45,9 @@ var none = {};
 
 var pos = {
     'line': null,
-    'column': null
+    'column': null,
+    'offset': null,
+    'indent': null
 };
 
 /*
