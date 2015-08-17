@@ -6,8 +6,14 @@
  * Dependencies.
  */
 
-var position = require('./index.js');
 var assert = require('assert');
+var position = require('./index.js');
+
+/*
+ * Methods.
+ */
+
+var dequal = assert.deepEqual;
 
 /*
  * Fixture.
@@ -60,23 +66,23 @@ describe('mdast-util-position', function () {
             var fn = position[type];
 
             it('should not throw without node', function () {
-                assert.deepEqual(fn(), pos);
+                dequal(fn(), pos);
             });
 
             it('should get type', function () {
-                assert.deepEqual(fn(properties), properties.position[type]);
+                dequal(fn(properties), properties.position[type]);
             });
 
             it('should return an empty object without objects', function () {
-                assert.deepEqual(fn(objects), pos);
+                dequal(fn(objects), pos);
             });
 
             it('should return an empty object without values', function () {
-                assert.deepEqual(fn(values), pos);
+                dequal(fn(values), pos);
             });
 
             it('should return an empty object without position', function () {
-                assert.deepEqual(fn(none), pos);
+                dequal(fn(none), pos);
             });
         });
     });
