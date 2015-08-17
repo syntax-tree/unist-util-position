@@ -1,4 +1,4 @@
-# mdast-util-position [![Build Status](https://img.shields.io/travis/wooorm/mdast-util-position.svg?style=flat)](https://travis-ci.org/wooorm/mdast-util-position) [![Coverage Status](https://img.shields.io/coveralls/wooorm/mdast-util-position.svg?style=flat)](https://coveralls.io/r/wooorm/mdast-util-position?branch=master)
+# mdast-util-position [![Build Status](https://img.shields.io/travis/wooorm/mdast-util-position.svg)](https://travis-ci.org/wooorm/mdast-util-position) [![Coverage Status](https://img.shields.io/codecov/c/github/wooorm/mdast-util-position.svg)](https://codecov.io/github/wooorm/mdast-util-position)
 
 [**mdast**](https://github.com/wooorm/mdast) utility to get the position
 of nodes.
