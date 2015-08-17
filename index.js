@@ -1,7 +1,7 @@
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer. All rights reserved.
- * @module mdast-util-position
+ * @module mdast:util:position
  * @fileoverview Utility to get either the starting or the
  *   ending position of a node, and if its generated or not.
  */
