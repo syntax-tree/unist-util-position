@@ -13,6 +13,7 @@
     "utility"
   ],
   "repository": "wooorm/mdast-util-position",
+  "dependencies": {},
   "scripts": [
     "index.js"
   ]
