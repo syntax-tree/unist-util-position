@@ -3,6 +3,11 @@
 [**mdast**](https://github.com/wooorm/mdast) utility to get the position
 of nodes.
 
+*   Supports index-based positional information patched by
+    [**mdast-range**](https://github.com/wooorm/mdast-range);
+
+*   Supports [`indent`](https://github.com/wooorm/mdast#location).
+
 ## Installation
 
 [npm](https://docs.npmjs.com/cli/install):
@@ -12,13 +17,8 @@ npm install mdast-util-position
 ```
 
 **mdast-util-position** is also available for [duo](http://duojs.org/#getting-started),
-and as an AMD, CommonJS, and globals module, [uncompressed](mdast-util-position.js) and
-[compressed](mdast-util-position.min.js).
-
-*   Supports index-based positional information patched by
-    [**mdast-range**](https://github.com/wooorm/mdast-range);
-
-*   Supports [`indent`](https://github.com/wooorm/mdast#location).
+and as an AMD, CommonJS, and globals module, [uncompressed and
+compressed](https://github.com/wooorm/mdast-util-position/releases).
 
 ## Usage
 

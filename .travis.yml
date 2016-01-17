@@ -8,3 +8,18 @@ node_js:
 - iojs
 sudo: false
 after_script: npm install codecov.io && cat ./coverage/lcov.info | codecov
+deploy:
+  - provider: npm
+    email: tituswormer@gmail.com
+    api_key:
+      secure: vE1YgGXN3nxpHCXm3aTTguaqGzP/mrVb9G+Jf8wNzXMSF5m3Reih5bUBbTlwt9JPUmjzFxMkSSdOmSurUGeiKrimr8IdSp0MTjgT7MGOjY1Hn+E/2wyUiZIBkVJ2po7pOgcIwFiDcSDyhY/+0Cga/PwkHJHJHZPs+Ugc+wa9d9NHjzB+cbK+oaVBAw8ZCmomV636+WwyFPdnBsaVigQnW8lUvdvz9D0Qu/vv9ShRRqd27M2p6P80hZGMFE2V7pbsO1mbEht973T6t9df9odKzpG8MI31F5CvywvLQoCvKW0OUUOkBbf9sDpanHF8JYN+UZwssr3+OkkoC+V6WghUeqlr0j6YYvi5iFjqUCTrXiqQRraCUxRKMvD07YsKZb8Zad7FrZFx6khM69hLEi5OJ1Dz424ZvbVGyNbrP3xx0mGQ7gDLEp1dyetLZGcsMXAE7GoT/MZlM+EDPbqVvgZabrYUuexdEJmjAD8/b2CSu9Z8nyefcqgEz5WBomWLTwtNwsi3ceVq1dfIH7unOqmdbwEJVpcrBoUIHROxPZzeHL6iW625Z+wVYeIBGIHHS+EOTihdLvbmwat4ZadtRRmqe5ST7ZkFIyXCqN+C6aHN8Bc9XTG8kX1m38fhlUHg8G4pUEvriHLDpXPdkJvGrZKj+d/3vr1SSUYHp6p1AgQkN50=
+    on:
+      tags: true
+  - provider: releases
+    api_key:
+      secure: v+RBRRLO5QwCPiXPbaCecETMZ8bu6Qd2V3CWIwHljMdTVUZ2URAUwjr14hqLhUcaJykj7YlkkJD+jyBWW0KjomaX36yeijVr2zAiSrXC1vCKALJWwUeLhc6G1Vu9I3GSDJOFU3+EdHVVFuZuHK0eUUpLJxhOmnLjWQFvl9f7s0Xk7gK0pro7WMJN+oxQL3ekOMNjlTP+/9s/1/fSmoPhQFIZrBYEHoKxiiUyPgvLYaBZgML+M4WhHx0y1mlb8xQadxOqvLq5+PcyK5kPtIRbbvuZjoz6d/1qbIhB0c9AQdF8ImzVYNL6tihIPHn1UVtkB0YQQ0+4fW8XmuzERBEw8NGwQI375tV/QE/Sxtw7uNJq1ITcYMeIv7WDISJstbUrsZru3OLsoNKT6JxyJlxg4l17WXZ5oEc2xDH74EZOHLle+TTukuuPZzU2mPupdDP9pFPT8GQl/PLVAVJOjQInrS1fAYpMeSO6zOpycyuaB8dJDzNKi/ZOgCj83mCow3IcOAZUlzE9OKRbtLL+ksOGGLNq1aUP8TouJJL9kK1kOr1Rq/3Qmx+hy2bB4BqVjitJ3xCYRhmR8+afbNSDIu93sxqjjnb+yvmGe3Fz6l8y5bv3dTbtHbazG0dPM2bQ4cesaNLlHzCWOeXr54+mUU94UYQ5sneaYR1nRVrWshTPu6k=
+    file:
+      - "mdast-util-position.js"
+      - "mdast-util-position.min.js"
+    on:
+      tags: true
