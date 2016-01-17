@@ -20,7 +20,7 @@ module, [uncompressed](mdast-util-position.js) and
 *   Supports index-based positional information patched by
     [**mdast-range**](https://github.com/wooorm/mdast-range);
 
-*   Supports [`indent`](https://github.com/wooorm/mdast/blob/master/doc/nodes.md#location).
+*   Supports [`indent`](https://github.com/wooorm/mdast#location).
 
 ## Usage
 
