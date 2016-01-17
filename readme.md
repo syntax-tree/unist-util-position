@@ -11,10 +11,8 @@ of nodes.
 npm install mdast-util-position
 ```
 
-**mdast-util-position** is also available for [bower](http://bower.io/#install-packages),
-[component](https://github.com/componentjs/component), and
-[duo](http://duojs.org/#getting-started), and as an AMD, CommonJS, and globals
-module, [uncompressed](mdast-util-position.js) and
+**mdast-util-position** is also available for [duo](http://duojs.org/#getting-started),
+and as an AMD, CommonJS, and globals module, [uncompressed](mdast-util-position.js) and
 [compressed](mdast-util-position.min.js).
 
 *   Supports index-based positional information patched by
