@@ -1,12 +1,15 @@
 /**
  * @author Titus Wormer
- * @copyright 2015 Titus Wormer. All rights reserved.
+ * @copyright 2015 Titus Wormer
+ * @license MIT
  * @module mdast:util:position
  * @fileoverview Utility to get either the starting or the
  *   ending position of a node, and if its generated or not.
  */
 
 'use strict';
+
+/* eslint-env commonjs */
 
 /**
  * Factory to get a position at `type`.
@@ -17,7 +20,7 @@
  *   positionFactory('end'); // Function
  *
  * @param {string} type - Either `'start'` or `'end'`.
- * @return {function(Node): Object}
+ * @return {function(Node): Object} - Getter.
  */
 function positionFactory(type) {
     /**

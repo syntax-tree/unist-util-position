@@ -1,3 +1,11 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2015 Titus Wormer
+ * @license MIT
+ * @module mdast:util:position
+ * @fileoverview Test suite for `mdast-util-position`.
+ */
+
 'use strict';
 
 /* eslint-env node */
@@ -125,7 +133,7 @@ test('mdast-util-position', function (t) {
         );
 
         st.end();
-    })
+    });
 
     t.end();
 });
