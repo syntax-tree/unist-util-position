@@ -2,6 +2,15 @@
 
 <!--lint disable no-multiple-toplevel-headings-->
 
+1.0.1 / 2016-01-17
+==================
+
+*   Refactor `readme.md` (74960dc)
+*   Remove support for `Bower`, `Component` (4d7608d)
+*   Refactor npm test target (3938aa1)
+*   Refactor to replace mocha with tape (de6d8f3)
+*   Update `mdast` to `remark` (b46dd05)
+
 1.0.0 / 2015-08-17
 ==================
 
