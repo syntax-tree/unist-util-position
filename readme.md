@@ -1,35 +1,38 @@
-# mdast-util-position [![Build Status](https://img.shields.io/travis/wooorm/mdast-util-position.svg)](https://travis-ci.org/wooorm/mdast-util-position) [![Coverage Status](https://img.shields.io/codecov/c/github/wooorm/mdast-util-position.svg)](https://codecov.io/github/wooorm/mdast-util-position)
+# mdast-util-position [![Build Status][travis-badge]][travis] [![Coverage Status][coverage-badge]][coverage]
 
-[**mdast**](https://github.com/wooorm/mdast) utility to get the position
-of nodes.
+[**mdast**][mdast] utility to get the position of nodes.
 
 *   Supports index-based positional information patched by
-    [**mdast-range**](https://github.com/wooorm/mdast-range);
+    [**mdast-range**][mdast-range];
 
-*   Supports [`indent`](https://github.com/wooorm/mdast#location).
+*   Supports [`indent`][mdast-indent].
+
+Utility to get the style of an [**mdast**][mdast] heading.
 
 ## Installation
 
-[npm](https://docs.npmjs.com/cli/install):
+[npm][npm-install]:
 
 ```bash
 npm install mdast-util-position
 ```
 
-**mdast-util-position** is also available for [duo](http://duojs.org/#getting-started),
-and as an AMD, CommonJS, and globals module, [uncompressed and
-compressed](https://github.com/wooorm/mdast-util-position/releases).
+**mdast-util-position** is also available for [duo][],
+and as an AMD, CommonJS, and globals module,
+[uncompressed and compressed][releases].
 
 ## Usage
 
 ```js
-var mdast = require('mdast');
+var remark = require('remark');
 var position = require('mdast-util-position');
 
-var ast = mdast.parse(`# foo
-
-* bar
-`);
+var ast = remark.parse([
+    '# foo',
+    '',
+    '* bar',
+    ''
+].join('\n'));
 
 position.start(ast) // {line: 1, column: 1}
 position.end(ast) // {line: 4, column: 1}
@@ -42,30 +45,61 @@ position.generated() // true
 
 ## API
 
-### position.start(node?)
+### `position.start([node])`
 
-### position.end(node?)
+### `position.end([node])`
 
-Parameters:
+Get the heading style of a node.
 
-*   `node` (optional [`Node`](https://github.com/wooorm/mdast/blob/master/doc/nodes.md#node))
-    — Node to check
+**Parameters**:
 
-Returns: [`Position`](https://github.com/wooorm/mdast/blob/master/doc/nodes.md#position)
-— Filled with `line` (nullable `uint32 >= 1`) and `column` (nullable
-`uint32 >= 1`).
+*   `node` ([`Node`][mdast-node]) — Node to check;
 
-### position.generated(node?)
+**Returns** ([`Position`][mdast-position]) — Filled with `line`
+(nullable `uint32 >= 1`) and `column` (nullable `uint32 >= 1`).
 
-Parameters:
+### `position.generated([node])`
 
-*   `node` (optional [`Node`](https://github.com/wooorm/mdast/blob/master/doc/nodes.md#node))
-    — Node to check
+Get the heading style of a node.
 
-Returns: `boolean`, whether or not `node` has positional information (both
-starting and ending lines and columns). This is useful when checking if a node
-is inserted by plug-ins.
+**Parameters**:
+
+*   `node` ([`Node`][mdast-node]) — Node to check;
+
+**Returns** (`boolean`) — Whether or not `node` has positional
+information (both starting and ending lines and columns).  This is
+useful when checking if a node is inserted by plug-ins.
 
 ## License
 
-[MIT](LICENSE) © [Titus Wormer](http://wooorm.com)
+[MIT][license] © [Titus Wormer][home]
+
+<!-- Definitions -->
+
+[travis-badge]: https://img.shields.io/travis/wooorm/mdast-util-position.svg
+
+[travis]: https://travis-ci.org/wooorm/mdast-util-position
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/mdast-util-position.svg
+
+[coverage]: https://codecov.io/github/wooorm/mdast-util-position
+
+[mdast]: https://github.com/wooorm/mdast
+
+[mdast-node]: https://github.com/wooorm/mdast#node
+
+[mdast-range]: https://github.com/wooorm/mdast-range
+
+[mdast-indent]: https://github.com/wooorm/mdast#location
+
+[mdast-position]: https://github.com/wooorm/mdast/blob/master/doc/nodes.md#position
+
+[npm-install]: https://docs.npmjs.com/cli/install
+
+[duo]: http://duojs.org/#getting-started
+
+[releases]: https://github.com/wooorm/mdast-util-position/releases
+
+[license]: LICENSE
+
+[home]: http://wooorm.com
