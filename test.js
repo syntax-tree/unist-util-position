@@ -1,19 +1,13 @@
 'use strict';
 
-/* eslint-env mocha */
+/* eslint-env node */
 
 /*
  * Dependencies.
  */
 
-var assert = require('assert');
+var test = require('tape');
 var position = require('./index.js');
-
-/*
- * Methods.
- */
-
-var dequal = assert.deepEqual;
 
 /*
  * Fixture.
@@ -60,52 +54,78 @@ var pos = {
  * Tests.
  */
 
-describe('mdast-util-position', function () {
+test('mdast-util-position', function (t) {
     ['start', 'end'].forEach(function (type) {
-        describe(type, function () {
+        t.test(type, function (st) {
             var fn = position[type];
 
-            it('should not throw without node', function () {
-                dequal(fn(), pos);
-            });
+            st.same(
+                fn(),
+                pos,
+                'should not throw without node'
+            );
 
-            it('should get type', function () {
-                dequal(fn(properties), properties.position[type]);
-            });
+            st.same(
+                fn(properties),
+                properties.position[type],
+                'should get type'
+            );
 
-            it('should return an empty object without objects', function () {
-                dequal(fn(objects), pos);
-            });
+            st.same(
+                fn(objects),
+                pos,
+                'should return an empty object without objects'
+            );
 
-            it('should return an empty object without values', function () {
-                dequal(fn(values), pos);
-            });
+            st.same(
+                fn(values),
+                pos,
+                'should return an empty object without values'
+            );
 
-            it('should return an empty object without position', function () {
-                dequal(fn(none), pos);
-            });
+            st.same(
+                fn(none),
+                pos,
+                'should return an empty object without position'
+            );
+
+            st.end();
         });
     });
 
-    describe('generated', function () {
-        it('should not throw without node', function () {
-            assert.equal(position.generated(), true);
-        });
+    t.test('generated', function (st) {
+        st.equal(
+            position.generated(),
+            true,
+            'should not throw without node'
+        );
 
-        it('should return false when with properties', function () {
-            assert.equal(position.generated(properties), false);
-        });
+        st.equal(
+            position.generated(properties),
+            false,
+            'should return false when with properties'
+        );
 
-        it('should return false when without properties', function () {
-            assert.equal(position.generated(objects), true);
-        });
+        st.equal(
+            position.generated(objects),
+            true,
+            'should return true when without properties'
+        );
 
-        it('should return false when without objects', function () {
-            assert.equal(position.generated(values), true);
-        });
+        st.equal(
+            position.generated(values),
+            true,
+            'should return true when without objects'
+        );
 
-        it('should return false when without position', function () {
-            assert.equal(position.generated(none), true);
-        });
-    });
+        st.equal(
+            position.generated(none),
+            true,
+            'should return true when without position'
+        );
+
+        st.end();
+    })
+
+    t.end();
 });
