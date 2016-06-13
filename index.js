@@ -2,7 +2,7 @@
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
  * @license MIT
- * @module mdast:util:position
+ * @module unist:util:position
  * @fileoverview Utility to get either the starting or the
  *   ending position of a node, and if its generated or not.
  */
@@ -53,7 +53,6 @@ function positionFactory(type) {
         return {
             'line': pos.line || null,
             'column': pos.column || null,
-            'indent': pos.indent || null,
             'offset': isNaN(pos.offset) ? null : pos.offset
         };
     };

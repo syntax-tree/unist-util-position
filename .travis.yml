@@ -20,8 +20,8 @@ deploy:
     api_key:
       secure: v+RBRRLO5QwCPiXPbaCecETMZ8bu6Qd2V3CWIwHljMdTVUZ2URAUwjr14hqLhUcaJykj7YlkkJD+jyBWW0KjomaX36yeijVr2zAiSrXC1vCKALJWwUeLhc6G1Vu9I3GSDJOFU3+EdHVVFuZuHK0eUUpLJxhOmnLjWQFvl9f7s0Xk7gK0pro7WMJN+oxQL3ekOMNjlTP+/9s/1/fSmoPhQFIZrBYEHoKxiiUyPgvLYaBZgML+M4WhHx0y1mlb8xQadxOqvLq5+PcyK5kPtIRbbvuZjoz6d/1qbIhB0c9AQdF8ImzVYNL6tihIPHn1UVtkB0YQQ0+4fW8XmuzERBEw8NGwQI375tV/QE/Sxtw7uNJq1ITcYMeIv7WDISJstbUrsZru3OLsoNKT6JxyJlxg4l17WXZ5oEc2xDH74EZOHLle+TTukuuPZzU2mPupdDP9pFPT8GQl/PLVAVJOjQInrS1fAYpMeSO6zOpycyuaB8dJDzNKi/ZOgCj83mCow3IcOAZUlzE9OKRbtLL+ksOGGLNq1aUP8TouJJL9kK1kOr1Rq/3Qmx+hy2bB4BqVjitJ3xCYRhmR8+afbNSDIu93sxqjjnb+yvmGe3Fz6l8y5bv3dTbtHbazG0dPM2bQ4cesaNLlHzCWOeXr54+mUU94UYQ5sneaYR1nRVrWshTPu6k=
     file:
-      - "mdast-util-position.js"
-      - "mdast-util-position.min.js"
+      - "unist-util-position.js"
+      - "unist-util-position.min.js"
     on:
       tags: true
       node: '6.0'

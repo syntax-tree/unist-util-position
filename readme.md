@@ -1,28 +1,25 @@
-# mdast-util-position [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status] [![Chat][chat-badge]][chat]
+# unist-util-position [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status] [![Chat][chat-badge]][chat]
 
 <!--lint disable heading-increment no-duplicate-headings-->
 
-[**mdast**][mdast] utility to get the position of nodes.
-
-*   Supports index-based positional information;
-*   Supports [`indent`][mdast-indent].
+[**unist**][unist] utility to get the position of nodes.
 
 ## Installation
 
 [npm][]:
 
 ```bash
-npm install mdast-util-position
+npm install unist-util-position
 ```
 
-**mdast-util-position** is also available as an AMD, CommonJS, and
+**unist-util-position** is also available as an AMD, CommonJS, and
 globals module, [uncompressed and compressed][releases].
 
 ## Usage
 
 ```js
 var remark = require('remark');
-var position = require('mdast-util-position');
+var position = require('unist-util-position');
 
 var ast = remark().parse([
     '# foo',
@@ -54,9 +51,8 @@ Get the bound position of `node`.
 
 ###### Returns
 
-[`Position`][mdast-position] — Filled with `line` (nullable
-`uint32 >= 1`), `column` (nullable `uint32 >= 1`), `offset` (nullable
-`uint32 >= 0`), and `indent`.
+[`Position`][position] — Filled with `line` (nullable `uint32 >= 1`),
+`column` (nullable `uint32 >= 1`), `offset` (nullable `uint32 >= 0`).
 
 ### `position.generated([node])`
 
@@ -64,7 +60,7 @@ Get the heading style of a node.
 
 ###### Parameters
 
-*   `node` ([`Node`][mdast-node]) — Node to check;
+*   `node` ([`Node`][node]) — Node to check;
 
 ###### Returns
 
@@ -78,19 +74,19 @@ if a node is inserted by plug-ins.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/mdast-util-position.svg
+[build-badge]: https://img.shields.io/travis/wooorm/unist-util-position.svg
 
-[build-status]: https://travis-ci.org/wooorm/mdast-util-position
+[build-status]: https://travis-ci.org/wooorm/unist-util-position
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/mdast-util-position.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/unist-util-position.svg
 
-[coverage-status]: https://codecov.io/github/wooorm/mdast-util-position
+[coverage-status]: https://codecov.io/github/wooorm/unist-util-position
 
 [chat-badge]: https://img.shields.io/gitter/room/wooorm/remark.svg
 
 [chat]: https://gitter.im/wooorm/remark
 
-[releases]: https://github.com/wooorm/mdast-util-position/releases
+[releases]: https://github.com/wooorm/unist-util-position/releases
 
 [license]: LICENSE
 
@@ -98,12 +94,8 @@ if a node is inserted by plug-ins.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[mdast]: https://github.com/wooorm/mdast
+[unist]: https://github.com/wooorm/unist
 
-[node]: https://github.com/wooorm/mdast#node
+[node]: https://github.com/wooorm/unist#node
 
-[mdast-node]: https://github.com/wooorm/mdast#node
-
-[mdast-indent]: https://github.com/wooorm/mdast#location
-
-[mdast-position]: https://github.com/wooorm/mdast/blob/master/doc/nodes.md#position
+[position]: https://github.com/wooorm/unist#position

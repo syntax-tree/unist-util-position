@@ -2,8 +2,8 @@
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
  * @license MIT
- * @module mdast:util:position
- * @fileoverview Test suite for `mdast-util-position`.
+ * @module unist:util:position
+ * @fileoverview Test suite for `unist-util-position`.
  */
 
 'use strict';
@@ -26,13 +26,11 @@ var properties = {
         'start': {
             'line': 1,
             'column': 1,
-            'indent': [],
             'offset': 0
         },
         'end': {
             'line': 1,
             'column': 2,
-            'indent': [],
             'offset': 1
         }
     }
@@ -54,15 +52,14 @@ var none = {};
 var pos = {
     'line': null,
     'column': null,
-    'offset': null,
-    'indent': null
+    'offset': null
 };
 
 /*
  * Tests.
  */
 
-test('mdast-util-position', function (t) {
+test('unist-util-position', function (t) {
     ['start', 'end'].forEach(function (type) {
         t.test(type, function (st) {
             var fn = position[type];
