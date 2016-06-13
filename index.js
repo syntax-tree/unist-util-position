@@ -96,10 +96,10 @@ function generated(node) {
         final.line === null || final.column === null;
 }
 
-position.generated = generated;
-
 /*
  * Expose.
  */
+
+position.generated = generated;
 
 module.exports = position;
