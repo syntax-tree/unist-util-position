@@ -2,6 +2,11 @@
 
 <!--lint disable no-multiple-toplevel-headings-->
 
+2.0.1 / 2016-06-13
+==================
+
+*   Fix `.travis.yml` ([`d295175`](https://github.com/wooorm/unist-util-position/commit/d295175))
+
 2.0.0 / 2016-06-13
 ==================
 
