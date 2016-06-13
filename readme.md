@@ -1,4 +1,4 @@
-# unist-util-position [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status] [![Chat][chat-badge]][chat]
+# unist-util-position [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status]
 
 <!--lint disable heading-increment no-duplicate-headings-->
 
@@ -81,10 +81,6 @@ if a node is inserted by plug-ins.
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/unist-util-position.svg
 
 [coverage-status]: https://codecov.io/github/wooorm/unist-util-position
-
-[chat-badge]: https://img.shields.io/gitter/room/wooorm/remark.svg
-
-[chat]: https://gitter.im/wooorm/remark
 
 [releases]: https://github.com/wooorm/unist-util-position/releases
 
