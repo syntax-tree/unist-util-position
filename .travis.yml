@@ -8,6 +8,7 @@ node_js:
 sudo: false
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+deploy:
   - provider: npm
     email: tituswormer@gmail.com
     api_key:
