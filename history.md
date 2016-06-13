@@ -2,6 +2,14 @@
 
 <!--lint disable no-multiple-toplevel-headings-->
 
+2.0.0 / 2016-06-13
+==================
+
+*   Remove support for Duo ([`70915c6`](https://github.com/wooorm/unist-util-position/commit/70915c6))
+*   Rename to `unist-util-position` ([`9842bc8`](https://github.com/wooorm/unist-util-position/commit/9842bc8))
+*   Update dev-dependencies ([`a18045c`](https://github.com/wooorm/unist-util-position/commit/a18045c))
+*   Update `readme.md` ([`2e1536c`](https://github.com/wooorm/unist-util-position/commit/2e1536c))
+
 1.0.2 / 2016-01-17
 ==================
 
