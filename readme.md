@@ -25,11 +25,9 @@ var tree = remark().parse([
 
 position.start(tree); //=> {line: 1, column: 1}
 position.end(tree); //=> {line: 4, column: 1}
-position.generated(tree); //=> false
 
 position.start(); //=> {line: null, column: null}
 position.end(); //=> {line: null, column: null}
-position.generated(); //=> true
 ```
 
 ## API
@@ -48,20 +46,6 @@ Get the position start or end position of `node`, respectively.
 
 [`Position`][position] — Filled with `line` (nullable `uint32 >= 1`),
 `column` (nullable `uint32 >= 1`), `offset` (nullable `uint32 >= 0`).
-
-### `position.generated([node])`
-
-Get the heading style of a node.
-
-###### Parameters
-
-*   `node` ([`Node`][node]) — Node to check;
-
-###### Returns
-
-`boolean` — Whether or not `node` has positional information (both
-starting and ending lines and columns).  This is useful when checking
-if a node is inserted by plug-ins.
 
 ## License
 

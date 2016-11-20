@@ -5,7 +5,6 @@ var position = exports;
 
 position.start = positionFactory('start');
 position.end = positionFactory('end');
-position.generated = generated;
 
 /* Factory to get a position at `type`. */
 function positionFactory(type) {
@@ -21,13 +20,4 @@ function positionFactory(type) {
       offset: isNaN(pos.offset) ? null : pos.offset
     };
   }
-}
-
-/* Detect if a node was available in the original document. */
-function generated(node) {
-  var initial = position.start(node);
-  var final = position.end(node);
-
-  return initial.line === null || initial.column === null ||
-    final.line === null || final.column === null;
 }

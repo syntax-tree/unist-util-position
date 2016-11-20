@@ -63,39 +63,5 @@ test('unist-util-position', function (t) {
     });
   });
 
-  t.test('generated', function (st) {
-    st.equal(
-      position.generated(),
-      true,
-      'should not throw without node'
-    );
-
-    st.equal(
-      position.generated(properties),
-      false,
-      'should return false when with properties'
-    );
-
-    st.equal(
-      position.generated(objects),
-      true,
-      'should return true when without properties'
-    );
-
-    st.equal(
-      position.generated(values),
-      true,
-      'should return true when without objects'
-    );
-
-    st.equal(
-      position.generated(none),
-      true,
-      'should return true when without position'
-    );
-
-    st.end();
-  });
-
   t.end();
 });
