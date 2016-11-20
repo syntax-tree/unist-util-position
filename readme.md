@@ -36,7 +36,7 @@ position.end(); //=> {line: null, column: null}
 
 ### `position.end([node])`
 
-Get the position start or end position of `node`, respectively.
+Get the start or end position, respectively, of `node`.
 
 ###### Parameters
 
