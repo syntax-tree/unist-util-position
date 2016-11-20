@@ -1,7 +1,5 @@
 # unist-util-position [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status]
 
-<!--lint disable heading-increment no-duplicate-headings-->
-
 [**unist**][unist] utility to get the position of nodes.
 
 ## Installation
@@ -12,29 +10,26 @@
 npm install unist-util-position
 ```
 
-**unist-util-position** is also available as an AMD, CommonJS, and
-globals module, [uncompressed and compressed][releases].
-
 ## Usage
 
 ```js
 var remark = require('remark');
 var position = require('unist-util-position');
 
-var ast = remark().parse([
-    '# foo',
-    '',
-    '* bar',
-    ''
+var tree = remark().parse([
+  '# foo',
+  '',
+  '* bar',
+  ''
 ].join('\n'));
 
-position.start(ast) // {line: 1, column: 1}
-position.end(ast) // {line: 4, column: 1}
-position.generated(ast) // false
+position.start(tree); //=> {line: 1, column: 1}
+position.end(tree); //=> {line: 4, column: 1}
+position.generated(tree); //=> false
 
-position.start() // {line: null, column: null}
-position.end() // {line: null, column: null}
-position.generated() // true
+position.start(); //=> {line: null, column: null}
+position.end(); //=> {line: null, column: null}
+position.generated(); //=> true
 ```
 
 ## API
@@ -43,7 +38,7 @@ position.generated() // true
 
 ### `position.end([node])`
 
-Get the bound position of `node`.
+Get the position start or end position of `node`, respectively.
 
 ###### Parameters
 
@@ -81,8 +76,6 @@ if a node is inserted by plug-ins.
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/unist-util-position.svg
 
 [coverage-status]: https://codecov.io/github/wooorm/unist-util-position
-
-[releases]: https://github.com/wooorm/unist-util-position/releases
 
 [license]: LICENSE
 
