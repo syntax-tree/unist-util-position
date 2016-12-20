@@ -53,13 +53,13 @@ Get the start or end position, respectively, of `node`.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/unist-util-position.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/unist-util-position.svg
 
-[build-status]: https://travis-ci.org/wooorm/unist-util-position
+[build-status]: https://travis-ci.org/syntax-tree/unist-util-position
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/unist-util-position.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-util-position.svg
 
-[coverage-status]: https://codecov.io/github/wooorm/unist-util-position
+[coverage-status]: https://codecov.io/github/syntax-tree/unist-util-position
 
 [license]: LICENSE
 
@@ -67,8 +67,8 @@ Get the start or end position, respectively, of `node`.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[unist]: https://github.com/wooorm/unist
+[unist]: https://github.com/syntax-tree/unist
 
-[node]: https://github.com/wooorm/unist#node
+[node]: https://github.com/syntax-tree/unist#node
 
-[position]: https://github.com/wooorm/unist#position
+[position]: https://github.com/syntax-tree/unist#position
