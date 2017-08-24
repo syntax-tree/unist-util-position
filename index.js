@@ -3,21 +3,23 @@
 /* Expose. */
 var position = exports;
 
-position.start = positionFactory('start');
-position.end = positionFactory('end');
+position.start = factory('start');
+position.end = factory('end');
 
-/* Factory to get a position at `type`. */
-function positionFactory(type) {
-  return pos;
+/* Factory to get a `type` point in the positional info of a node. */
+function factory(type) {
+  point.displayName = type;
 
-  /* Get a position in `node` at a bound `type`. */
-  function pos(node) {
-    var pos = (node && node.position && node.position[type]) || {};
+  return point;
+
+  /* Get a point in `node.position` at a bound `type`. */
+  function point(node) {
+    var point = (node && node.position && node.position[type]) || {};
 
     return {
-      line: pos.line || null,
-      column: pos.column || null,
-      offset: isNaN(pos.offset) ? null : pos.offset
+      line: point.line || null,
+      column: point.column || null,
+      offset: isNaN(point.offset) ? null : point.offset
     };
   }
 }

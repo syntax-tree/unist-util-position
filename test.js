@@ -18,11 +18,7 @@ var values = {position: {}};
 
 var none = {};
 
-var pos = {line: null, column: null, offset: null};
-
-/*
- * Tests.
- */
+var generated = {line: null, column: null, offset: null};
 
 test('unist-util-position', function (t) {
   ['start', 'end'].forEach(function (type) {
@@ -31,7 +27,7 @@ test('unist-util-position', function (t) {
 
       st.same(
         fn(),
-        pos,
+        generated,
         'should not throw without node'
       );
 
@@ -43,19 +39,19 @@ test('unist-util-position', function (t) {
 
       st.same(
         fn(objects),
-        pos,
+        generated,
         'should return an empty object without objects'
       );
 
       st.same(
         fn(values),
-        pos,
+        generated,
         'should return an empty object without values'
       );
 
       st.same(
         fn(none),
-        pos,
+        generated,
         'should return an empty object without position'
       );
 

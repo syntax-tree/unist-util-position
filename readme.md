@@ -1,6 +1,6 @@
 # unist-util-position [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status]
 
-[**unist**][unist] utility to get the position of nodes.
+[**unist**][unist] utility to get the positional info of nodes.
 
 ## Installation
 
@@ -36,7 +36,7 @@ position.end(); //=> {line: null, column: null}
 
 ### `position.end([node])`
 
-Get the start or end position, respectively, of `node`.
+Get the start or end points in the positional info of `node`.
 
 ###### Parameters
 
@@ -44,7 +44,7 @@ Get the start or end position, respectively, of `node`.
 
 ###### Returns
 
-[`Position`][position] — Filled with `line` (nullable `uint32 >= 1`),
+[`Point`][point] — Filled with `line` (nullable `uint32 >= 1`),
 `column` (nullable `uint32 >= 1`), `offset` (nullable `uint32 >= 0`).
 
 ## License
@@ -71,4 +71,4 @@ Get the start or end position, respectively, of `node`.
 
 [node]: https://github.com/syntax-tree/unist#node
 
-[position]: https://github.com/syntax-tree/unist#position
+[point]: https://github.com/syntax-tree/unist#point
