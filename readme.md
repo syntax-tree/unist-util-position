@@ -47,6 +47,14 @@ Get the start or end points in the positional info of `node`.
 [`Point`][point] — Filled with `line` (nullable `uint32 >= 1`),
 `column` (nullable `uint32 >= 1`), `offset` (nullable `uint32 >= 0`).
 
+## Contribute
+
+See [`contribute.md` in `syntax-tree/unist`][contribute] for ways to get
+started.
+
+This organisation has a [Code of Conduct][coc].  By interacting with this
+repository, organisation, or community you agree to abide by its terms.
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -72,3 +80,7 @@ Get the start or end points in the positional info of `node`.
 [node]: https://github.com/syntax-tree/unist#node
 
 [point]: https://github.com/syntax-tree/unist#point
+
+[contribute]: https://github.com/syntax-tree/unist/blob/master/contributing.md
+
+[coc]: https://github.com/syntax-tree/unist/blob/master/code-of-conduct.md
