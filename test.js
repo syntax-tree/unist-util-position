@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var position = require('./index.js');
+var position = require('.');
 
 var properties = {
   position: {
