@@ -13,21 +13,16 @@ npm install unist-util-position
 ## Usage
 
 ```js
-var remark = require('remark');
-var position = require('unist-util-position');
+var remark = require('remark')
+var position = require('unist-util-position')
 
-var tree = remark().parse([
-  '# foo',
-  '',
-  '* bar',
-  ''
-].join('\n'));
+var tree = remark().parse(['# foo', '', '* bar', ''].join('\n'))
 
-position.start(tree); //=> {line: 1, column: 1}
-position.end(tree); //=> {line: 4, column: 1}
+position.start(tree) // => {line: 1, column: 1}
+position.end(tree) // => {line: 4, column: 1}
 
-position.start(); //=> {line: null, column: null}
-position.end(); //=> {line: null, column: null}
+position.start() // => {line: null, column: null}
+position.end() // => {line: null, column: null}
 ```
 
 ## API
