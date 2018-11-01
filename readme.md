@@ -64,7 +64,7 @@ repository, organisation, or community you agree to abide by its terms.
 
 [coverage-status]: https://codecov.io/github/syntax-tree/unist-util-position
 
-[license]: LICENSE
+[license]: license
 
 [author]: https://wooorm.com
 
