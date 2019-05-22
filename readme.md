@@ -10,11 +10,11 @@
 
 [**unist**][unist] utility to get the positional info of nodes.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install unist-util-position
 ```
 
@@ -24,7 +24,7 @@ npm install unist-util-position
 var remark = require('remark')
 var position = require('unist-util-position')
 
-var tree = remark().parse(['# foo', '', '* bar', ''].join('\n'))
+var tree = remark().parse('# foo\n\n* bar\n')
 
 position.start(tree) // => {line: 1, column: 1}
 position.end(tree) // => {line: 4, column: 1}
@@ -50,13 +50,18 @@ Get the start or end points in the positional info of `node`.
 [`Point`][point] — Filled with `line` (nullable `uint32 >= 1`),
 `column` (nullable `uint32 >= 1`), `offset` (nullable `uint32 >= 0`).
 
+Note that in [unist][], `line` and `column` are 1-indexed integers and
+`offset` is a 0-indexed integer.
+
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/unist`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -96,12 +101,14 @@ repository, organisation, or community you agree to abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
+
 [unist]: https://github.com/syntax-tree/unist
 
 [node]: https://github.com/syntax-tree/unist#node
 
 [point]: https://github.com/syntax-tree/unist#point
-
-[contributing]: https://github.com/syntax-tree/unist/blob/master/contributing.md
-
-[coc]: https://github.com/syntax-tree/unist/blob/master/code-of-conduct.md
