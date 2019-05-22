@@ -1,4 +1,12 @@
-# unist-util-position [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status]
+# unist-util-position
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
 
 [**unist**][unist] utility to get the positional info of nodes.
 
@@ -58,11 +66,29 @@ repository, organisation, or community you agree to abide by its terms.
 
 [build-badge]: https://img.shields.io/travis/syntax-tree/unist-util-position.svg
 
-[build-status]: https://travis-ci.org/syntax-tree/unist-util-position
+[build]: https://travis-ci.org/syntax-tree/unist-util-position
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-util-position.svg
 
-[coverage-status]: https://codecov.io/github/syntax-tree/unist-util-position
+[coverage]: https://codecov.io/github/syntax-tree/unist-util-position
+
+[downloads-badge]: https://img.shields.io/npm/dm/unist-util-position.svg
+
+[downloads]: https://www.npmjs.com/package/unist-util-position
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/unist-util-position.svg
+
+[size]: https://bundlephobia.com/result?p=unist-util-position
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/syntax-tree
 
 [license]: license
 
