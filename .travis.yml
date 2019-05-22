@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- lts/boron
-- node
+  - lts/dubnium
+  - node
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
@@ -9,7 +9,7 @@ deploy:
   api_key:
     secure: VUGz+TblrQ61XmlZNIdgQVEDx/j6KemYfBKeDsP3BQDdEUHzHznK6WIuN61ZKfXe/Jfm08cI0BjSYP7cKOs+h07W9SNrKL+2armXRv800+dGLPeon6cE5zy9678yfeA9WXZ9PZz2xYnVw4HCkP3tB4zfYrMdiiqhyxO63RouxOa5mYMKTJ5s2Kdj+JQB1CBEF1yp2VKz9aDZM7pSxIGfdfdcXxH1mRrO3XQQrTFvJUDtQ2RGb25cn/ut7c9u8VeC5urAE2+YY5MyycckFyVXubxUqWIxKao2nvsX9hydl1hx5OoOd7FTrN04Bg7vHsxji6w982enJgDGLZqDTXfH+WtRSsURBdLTJ7LSe0RnWZ4Hxw3YVdmTkRfWD6JyhlHpKKNVeYk5A+tUekmi52S+BuVgQb/w5hNC8VWWRF86QL3lq7Q7UzR6uZ0oPryCrqiP4Qtd2qxtHLhhJFSyLDbyhYk85UALpWIFaK1tgHYgS+6LMh3nTOKaci46feSdSPF+kWlH4ZKMzw+H+PpT63v0WZB7DL85PIIQUtHWSBkCXcTZeegBRgLgyOjVTiH7bhHjB+8kMqgmA2hErZZPTrJYUlVk4d0UjA0GT6Nttx1gj8IIE/gD82l2mMSmWErJopQjdoFy+WdnhLCxK3f2QeQ++5Yxn6fckJoI2/gXutMul8I=
   file:
-    - "unist-util-position.js"
-    - "unist-util-position.min.js"
+    - 'unist-util-position.js'
+    - 'unist-util-position.min.js'
   on:
     tags: true
