@@ -1,6 +1,6 @@
 {
   "name": "unist-util-position",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Utility to get the position of unist nodes",
   "license": "MIT",
   "keywords": [
