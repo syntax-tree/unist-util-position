@@ -26,32 +26,39 @@ var position = require('unist-util-position')
 
 var tree = remark().parse('# foo\n\n* bar\n')
 
-position.start(tree) // => {line: 1, column: 1}
-position.end(tree) // => {line: 4, column: 1}
+console.log(position(tree))
+console.log(position.start(tree))
+console.log(position.end(tree))
 
-position.start() // => {line: null, column: null}
-position.end() // => {line: null, column: null}
+console.log(position())
+console.log(position.start())
+console.log(position.end())
+```
+
+Yields:
+
+```js
+{start: {line: 1, column: 1, offset: 0}, end: {line: 4, column: 1, offset: 13}}
+{line: 1, column: 1, offset: 0}
+{line: 4, column: 1, offset: 13}
+{start: {line: null, column: null, offset: null}, end: {line: null, column: null, offset: null}}
+{line: null, column: null, offset: null}
+{line: null, column: null, offset: null}
 ```
 
 ## API
 
-### `position.start([node])`
+### `position(node?)`
 
-### `position.end([node])`
+Get the positional info of `node` ([`Node?`][node]).
+Returns [`Position`][position].
 
-Get the start or end points in the positional info of `node`.
+### `position.start(node?)`
 
-###### Parameters
+### `position.end(node?)`
 
-*   `node` ([`Node?`][node]) — Node to check.
-
-###### Returns
-
-[`Point`][point] — Filled with `line` (nullable `uint32 >= 1`),
-`column` (nullable `uint32 >= 1`), `offset` (nullable `uint32 >= 0`).
-
-Note that in [unist][], `line` and `column` are 1-indexed integers and
-`offset` is a 0-indexed integer.
+Get the start or end points in the positional info of `node` ([`Node?`][node]).
+Returns [`Point`][point].
 
 ## Contribute
 
@@ -110,5 +117,7 @@ abide by its terms.
 [unist]: https://github.com/syntax-tree/unist
 
 [node]: https://github.com/syntax-tree/unist#node
+
+[position]: https://github.com/syntax-tree/unist#position
 
 [point]: https://github.com/syntax-tree/unist#point

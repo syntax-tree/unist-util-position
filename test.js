@@ -10,44 +10,78 @@ var properties = {
   }
 }
 
-var objects = {
-  position: {start: {}, end: {}}
-}
+var noFields = {position: {start: {}, end: {}}}
 
-var values = {position: {}}
+var noPoints = {position: {}}
 
-var none = {}
+var noPosition = {}
 
 var generated = {line: null, column: null, offset: null}
 
 test('unist-util-position', function(t) {
-  ;['start', 'end'].forEach(function(type) {
-    t.test(type, function(st) {
-      var fn = position[type]
+  var sides = ['start', 'end']
 
-      st.same(fn(), generated, 'should not throw without node')
+  t.test('position', function(t) {
+    t.same(
+      position(properties),
+      properties.position,
+      'should get the whole position'
+    )
 
-      st.same(fn(properties), properties.position[type], 'should get type')
+    t.same(
+      position(noFields),
+      {start: generated, end: generated},
+      'should return an empty position without fields'
+    )
 
-      st.same(
-        fn(objects),
+    t.same(
+      position(noPoints),
+      {start: generated, end: generated},
+      'should return an empty position without points'
+    )
+
+    t.same(
+      position(noPosition),
+      {start: generated, end: generated},
+      'should return an empty position without position'
+    )
+
+    t.same(
+      position(),
+      {start: generated, end: generated},
+      'should return an empty position without node'
+    )
+
+    t.end()
+  })
+
+  sides.forEach(function(side) {
+    t.test('position.' + side, function(t) {
+      var fn = position[side]
+
+      t.same(fn(properties), properties.position[side], 'should get a side')
+
+      t.same(
+        fn(noFields),
         generated,
-        'should return an empty object without objects'
+        'should return an empty point without fields'
       )
 
-      st.same(
-        fn(values),
+      t.same(
+        fn(noPoints),
         generated,
-        'should return an empty object without values'
+        'should return an empty point without points'
       )
 
-      st.same(
-        fn(none),
+      t.same(
+        fn(noPosition),
         generated,
-        'should return an empty object without position'
+        'should return an empty point without position'
       )
 
-      st.end()
+      t.same(fn(), generated, 'should return an empty point without node')
+
+      t.end()
     })
   })
 
