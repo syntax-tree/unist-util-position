@@ -1,15 +1,16 @@
 {
   "name": "unist-util-position",
   "version": "3.0.4",
-  "description": "Utility to get the position of unist nodes",
+  "description": "unist utility to get the position of a node",
   "license": "MIT",
   "keywords": [
     "unist",
+    "unist-util",
+    "util",
+    "utility",
     "node",
     "position",
-    "point",
-    "util",
-    "utility"
+    "point"
   ],
   "repository": "syntax-tree/unist-util-position",
   "bugs": "https://github.com/syntax-tree/unist-util-position/issues",
