@@ -18,10 +18,10 @@ var noPosition = {}
 
 var generated = {line: null, column: null, offset: null}
 
-test('unist-util-position', function(t) {
+test('unist-util-position', function (t) {
   var sides = ['start', 'end']
 
-  t.test('position', function(t) {
+  t.test('position', function (t) {
     t.same(
       position(properties),
       properties.position,
@@ -55,8 +55,8 @@ test('unist-util-position', function(t) {
     t.end()
   })
 
-  sides.forEach(function(side) {
-    t.test('position.' + side, function(t) {
+  sides.forEach(function (side) {
+    t.test('position.' + side, function (t) {
       var fn = position[side]
 
       t.same(fn(properties), properties.position[side], 'should get a side')
