@@ -1,15 +1,12 @@
 'use strict'
 
-var start = factory('start')
-var end = factory('end')
-
 module.exports = position
 
-position.start = start
-position.end = end
+position.start = factory('start')
+position.end = factory('end')
 
 function position(node) {
-  return {start: start(node), end: end(node)}
+  return {start: position.start(node), end: position.end(node)}
 }
 
 function factory(type) {
