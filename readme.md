@@ -76,9 +76,9 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/syntax-tree/unist-util-position.svg
+[build-badge]: https://github.com/syntax-tree/unist-util-position/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/syntax-tree/unist-util-position
+[build]: https://github.com/syntax-tree/unist-util-position/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-util-position.svg
 
