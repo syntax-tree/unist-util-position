@@ -34,12 +34,12 @@
     "remark-preset-wooorm": "^8.0.0",
     "tape": "^5.0.0",
     "tinyify": "^3.0.0",
-    "xo": "^0.34.0"
+    "xo": "^0.35.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
-    "build-bundle": "browserify . -s unistUtilPosition > unist-util-position.js",
-    "build-mangle": "browserify . -s unistUtilPosition -p tinyify > unist-util-position.min.js",
+    "build-bundle": "browserify . -s unistUtilPosition -o unist-util-position.js",
+    "build-mangle": "browserify . -s unistUtilPosition -o unist-util-position.min.js -p tinyify",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
