@@ -55,6 +55,7 @@ test('unist-util-position', function (t) {
     t.end()
   })
 
+  // eslint-disable-next-line unicorn/no-array-for-each
   sides.forEach(function (side) {
     t.test('position.' + side, function (t) {
       var fn = position[side]
