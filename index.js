@@ -1,15 +1,11 @@
-'use strict'
+export var pointStart = point('start')
+export var pointEnd = point('end')
 
-module.exports = position
-
-position.start = factory('start')
-position.end = factory('end')
-
-function position(node) {
-  return {start: position.start(node), end: position.end(node)}
+export function position(node) {
+  return {start: pointStart(node), end: pointEnd(node)}
 }
 
-function factory(type) {
+function point(type) {
   point.displayName = type
 
   return point
@@ -20,7 +16,7 @@ function factory(type) {
     return {
       line: point.line || null,
       column: point.column || null,
-      offset: isNaN(point.offset) ? null : point.offset
+      offset: point.offset > -1 ? point.offset : null
     }
   }
 }

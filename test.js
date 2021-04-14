@@ -1,7 +1,5 @@
-'use strict'
-
-var test = require('tape')
-var position = require('.')
+import test from 'tape'
+import {position, pointStart, pointEnd} from './index.js'
 
 var properties = {
   position: {
@@ -19,8 +17,6 @@ var noPosition = {}
 var generated = {line: null, column: null, offset: null}
 
 test('unist-util-position', function (t) {
-  var sides = ['start', 'end']
-
   t.test('position', function (t) {
     t.same(
       position(properties),
@@ -55,35 +51,60 @@ test('unist-util-position', function (t) {
     t.end()
   })
 
-  // eslint-disable-next-line unicorn/no-array-for-each
-  sides.forEach(function (side) {
-    t.test('position.' + side, function (t) {
-      var fn = position[side]
+  t.test('pointStart', function (t) {
+    t.same(
+      pointStart(properties),
+      properties.position.start,
+      'should get a side'
+    )
 
-      t.same(fn(properties), properties.position[side], 'should get a side')
+    t.same(
+      pointStart(noFields),
+      generated,
+      'should return an empty point without fields'
+    )
 
-      t.same(
-        fn(noFields),
-        generated,
-        'should return an empty point without fields'
-      )
+    t.same(
+      pointStart(noPoints),
+      generated,
+      'should return an empty point without points'
+    )
 
-      t.same(
-        fn(noPoints),
-        generated,
-        'should return an empty point without points'
-      )
+    t.same(
+      pointStart(noPosition),
+      generated,
+      'should return an empty point without position'
+    )
 
-      t.same(
-        fn(noPosition),
-        generated,
-        'should return an empty point without position'
-      )
+    t.same(pointStart(), generated, 'should return an empty point without node')
 
-      t.same(fn(), generated, 'should return an empty point without node')
+    t.end()
+  })
 
-      t.end()
-    })
+  t.test('pointEnd', function (t) {
+    t.same(pointEnd(properties), properties.position.end, 'should get a side')
+
+    t.same(
+      pointEnd(noFields),
+      generated,
+      'should return an empty point without fields'
+    )
+
+    t.same(
+      pointEnd(noPoints),
+      generated,
+      'should return an empty point without points'
+    )
+
+    t.same(
+      pointEnd(noPosition),
+      generated,
+      'should return an empty point without position'
+    )
+
+    t.same(pointEnd(), generated, 'should return an empty point without node')
+
+    t.end()
   })
 
   t.end()

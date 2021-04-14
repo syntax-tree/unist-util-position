@@ -12,6 +12,9 @@
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -21,18 +24,18 @@ npm install unist-util-position
 ## Use
 
 ```js
-var remark = require('remark')
-var position = require('unist-util-position')
+import remark from 'remark'
+import {position, pointStart, pointEnd} from 'unist-util-position'
 
 var tree = remark().parse('# foo\n\n* bar\n')
 
 console.log(position(tree))
-console.log(position.start(tree))
-console.log(position.end(tree))
+console.log(pointStart(tree))
+console.log(pointEnd(tree))
 
 console.log(position())
-console.log(position.start())
-console.log(position.end())
+console.log(pointStart())
+console.log(pointEnd())
 ```
 
 Yields:
@@ -48,14 +51,18 @@ Yields:
 
 ## API
 
+This package exports the following identifiers: `position`, `pointStart`, and
+`pointEnd`.
+There is no default export.
+
 ### `position(node?)`
 
 Get the positional info of `node` ([`Node?`][node]).
 Returns [`Position`][position].
 
-### `position.start(node?)`
+### `pointStart(node?)`
 
-### `position.end(node?)`
+### `pointEnd(node?)`
 
 Get the start or end points in the positional info of `node` ([`Node?`][node]).
 Returns [`Point`][point].
