@@ -31,8 +31,6 @@ export function position(node) {
  * @param {'start'|'end'} type
  */
 function point(type) {
-  point.displayName = type
-
   return point
 
   /**
