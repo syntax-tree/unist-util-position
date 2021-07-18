@@ -12,8 +12,8 @@
  * @property {PositionLike} [position]
  */
 
-export var pointStart = point('start')
-export var pointEnd = point('end')
+export const pointStart = point('start')
+export const pointEnd = point('end')
 
 /**
  * Get the positional info of `node`.
@@ -42,7 +42,7 @@ function point(type) {
   function point(node) {
     /** @type {Point} */
     // @ts-expect-error looks like a point
-    var point = (node && node.position && node.position[type]) || {}
+    const point = (node && node.position && node.position[type]) || {}
 
     return {
       line: point.line || null,

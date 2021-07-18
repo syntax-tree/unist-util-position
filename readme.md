@@ -27,7 +27,7 @@ npm install unist-util-position
 import {remark} from 'remark'
 import {position, pointStart, pointEnd} from 'unist-util-position'
 
-var tree = remark().parse('# foo\n\n* bar\n')
+const tree = remark().parse('# foo\n\n* bar\n')
 
 console.log(position(tree))
 console.log(pointStart(tree))

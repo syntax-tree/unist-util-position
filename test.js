@@ -1,23 +1,23 @@
 import test from 'tape'
 import {position, pointStart, pointEnd} from './index.js'
 
-var properties = {
+const properties = {
   position: {
     start: {line: 1, column: 1, offset: 0},
     end: {line: 1, column: 2, offset: 1}
   }
 }
 
-var noFields = {position: {start: {}, end: {}}}
+const noFields = {position: {start: {}, end: {}}}
 
-var noPoints = {position: {}}
+const noPoints = {position: {}}
 
-var noPosition = {}
+const noPosition = {}
 
-var generated = {line: null, column: null, offset: null}
+const generated = {line: null, column: null, offset: null}
 
-test('unist-util-position', function (t) {
-  t.test('position', function (t) {
+test('unist-util-position', (t) => {
+  t.test('position', (t) => {
     t.same(
       position(properties),
       properties.position,
@@ -51,7 +51,7 @@ test('unist-util-position', function (t) {
     t.end()
   })
 
-  t.test('pointStart', function (t) {
+  t.test('pointStart', (t) => {
     t.same(
       pointStart(properties),
       properties.position.start,
@@ -81,7 +81,7 @@ test('unist-util-position', function (t) {
     t.end()
   })
 
-  t.test('pointEnd', function (t) {
+  t.test('pointEnd', (t) => {
     t.same(pointEnd(properties), properties.position.end, 'should get a side')
 
     t.same(
