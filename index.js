@@ -41,7 +41,7 @@ function point(type) {
    */
   function point(node) {
     /** @type {Point} */
-    // @ts-ignore looks like a point
+    // @ts-expect-error looks like a point
     var point = (node && node.position && node.position[type]) || {}
 
     return {
