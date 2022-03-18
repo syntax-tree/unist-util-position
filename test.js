@@ -2,17 +2,18 @@ import test from 'tape'
 import {position, pointStart, pointEnd} from './index.js'
 
 const properties = {
+  type: 'a',
   position: {
     start: {line: 1, column: 1, offset: 0},
     end: {line: 1, column: 2, offset: 1}
   }
 }
 
-const noFields = {position: {start: {}, end: {}}}
+const noFields = {type: 'b', position: {start: {}, end: {}}}
 
-const noPoints = {position: {}}
+const noPoints = {type: 'c', position: {}}
 
-const noPosition = {}
+const noPosition = {type: 'd'}
 
 const generated = {line: null, column: null, offset: null}
 

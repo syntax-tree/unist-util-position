@@ -1,15 +1,14 @@
 /**
  * @typedef {import('unist').Position} Position
+ * @typedef {import('unist').Node} Node
+ * @typedef {Record<string, unknown> & {type: string, position?: PositionLike|undefined}} NodeLike
  * @typedef {import('unist').Point} Point
  *
  * @typedef {Partial<Point>} PointLike
  *
- * @typedef {Object} PositionLike
+ * @typedef PositionLike
  * @property {PointLike} [start]
  * @property {PointLike} [end]
- *
- * @typedef {Object} NodeLike
- * @property {PositionLike} [position]
  */
 
 export const pointStart = point('start')
