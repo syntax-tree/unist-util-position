@@ -41,9 +41,13 @@ function point(type) {
   function point(node) {
     const point = (node && node.position && node.position[type]) || {}
 
+    // To do: next major: don’t return points when invalid.
     return {
+      // @ts-expect-error: in practice, null is allowed.
       line: point.line || null,
+      // @ts-expect-error: in practice, null is allowed.
       column: point.column || null,
+      // @ts-expect-error: in practice, null is allowed.
       offset: point.offset > -1 ? point.offset : null
     }
   }
