@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {position, pointStart, pointEnd} from './index.js'
+import * as mod from './index.js'
 
 const properties = {
   type: 'a',
@@ -17,6 +18,14 @@ const noPoints = {type: 'c', position: {}}
 const noPosition = {type: 'd'}
 
 const generated = {line: null, column: null, offset: null}
+
+test('core', () => {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['pointEnd', 'pointStart', 'position'],
+    'should expose the public api'
+  )
+})
 
 test('position', () => {
   assert.deepEqual(
