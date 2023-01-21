@@ -78,6 +78,7 @@ const tree = fromMarkdown('# foo\n\n* bar\n')
 
 console.log(position(tree))
 console.log(pointStart(tree))
+console.log(pointEnd(tree))
 ```
 
 Yields:
@@ -118,7 +119,7 @@ Get the ending point of `node`.
 
 ###### Returns
 
-Point ([`point`][unist-point]).
+Point ([`Point`][unist-point]).
 
 ### `pointStart(node)`
 
@@ -131,7 +132,7 @@ Get the starting point of `node`.
 
 ###### Returns
 
-Point ([`point`][unist-point]).
+Point ([`Point`][unist-point]).
 
 ## Types
 
