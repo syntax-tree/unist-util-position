@@ -17,9 +17,9 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`position(node?)`](#positionnode)
-    *   [`pointStart(node?)`](#pointstartnode)
-    *   [`pointEnd(node?)`](#pointendnode)
+    *   [`position(node)`](#positionnode)
+    *   [`pointEnd(node)`](#pointendnode)
+    *   [`pointStart(node)`](#pointstartnode)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Related](#related)
@@ -48,7 +48,7 @@ to display positional info to users.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, 18.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install unist-util-position
@@ -57,14 +57,14 @@ npm install unist-util-position
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {position, pointStart, pointEnd} from "https://esm.sh/unist-util-position@4"
+import {position, pointStart, pointEnd} from 'https://esm.sh/unist-util-position@4'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {position, pointStart, pointEnd} from "https://esm.sh/unist-util-position@4?bundle"
+  import {position, pointStart, pointEnd} from 'https://esm.sh/unist-util-position@4?bundle'
 </script>
 ```
 
@@ -90,21 +90,48 @@ Yields:
 
 ## API
 
-This package exports the identifiers `position`, `pointStart`, and
-`pointEnd`.
+This package exports the identifiers [`pointEnd`][pointend],
+[`pointStart`][pointstart], and [`position`][position].
 There is no default export.
 
-### `position(node?)`
+### `position(node)`
 
-Get the positional info of `node` ([`Node?`][node]).
-Returns a proper [`Position`][position].
+Get the positional info of `node`.
 
-### `pointStart(node?)`
+###### Parameters
 
-### `pointEnd(node?)`
+*   `node` ([`Node`][node])
+    — node
 
-Get the start or end points in the positional info of `node` ([`Node?`][node]).
-Returns a proper [`Point`][point].
+###### Returns
+
+Position ([`Position`][unist-position]).
+
+### `pointEnd(node)`
+
+Get the ending point of `node`.
+
+###### Parameters
+
+*   `node` ([`Node`][node])
+    — node
+
+###### Returns
+
+Point ([`point`][unist-point]).
+
+### `pointStart(node)`
+
+Get the starting point of `node`.
+
+###### Parameters
+
+*   `node` ([`Node`][node])
+    — node
+
+###### Returns
+
+Point ([`point`][unist-point]).
 
 ## Types
 
@@ -115,7 +142,7 @@ It exports no additional types.
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Related
@@ -197,10 +224,16 @@ abide by its terms.
 
 [node]: https://github.com/syntax-tree/unist#node
 
-[position]: https://github.com/syntax-tree/unist#position
+[unist-position]: https://github.com/syntax-tree/unist#position
 
-[point]: https://github.com/syntax-tree/unist#point
+[unist-point]: https://github.com/syntax-tree/unist#point
 
 [unist-util-generated]: https://github.com/syntax-tree/unist-util-generated
 
 [unist-util-stringify-position]: https://github.com/syntax-tree/unist-util-stringify-position
+
+[position]: #positionnode
+
+[pointend]: #pointendnode
+
+[pointstart]: #pointstartnode
