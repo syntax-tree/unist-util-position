@@ -1,4 +1,5 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {position, pointStart, pointEnd} from './index.js'
 
 const properties = {
@@ -17,96 +18,98 @@ const noPosition = {type: 'd'}
 
 const generated = {line: null, column: null, offset: null}
 
-test('unist-util-position', (t) => {
-  t.test('position', (t) => {
-    t.same(
-      position(properties),
-      properties.position,
-      'should get the whole position'
-    )
+test('position', () => {
+  assert.deepEqual(
+    position(properties),
+    properties.position,
+    'should get the whole position'
+  )
 
-    t.same(
-      position(noFields),
-      {start: generated, end: generated},
-      'should return an empty position without fields'
-    )
+  assert.deepEqual(
+    position(noFields),
+    {start: generated, end: generated},
+    'should return an empty position without fields'
+  )
 
-    t.same(
-      position(noPoints),
-      {start: generated, end: generated},
-      'should return an empty position without points'
-    )
+  assert.deepEqual(
+    position(noPoints),
+    {start: generated, end: generated},
+    'should return an empty position without points'
+  )
 
-    t.same(
-      position(noPosition),
-      {start: generated, end: generated},
-      'should return an empty position without position'
-    )
+  assert.deepEqual(
+    position(noPosition),
+    {start: generated, end: generated},
+    'should return an empty position without position'
+  )
 
-    t.same(
-      position(),
-      {start: generated, end: generated},
-      'should return an empty position without node'
-    )
+  assert.deepEqual(
+    position(),
+    {start: generated, end: generated},
+    'should return an empty position without node'
+  )
+})
 
-    t.end()
-  })
+test('pointStart', () => {
+  assert.deepEqual(
+    pointStart(properties),
+    properties.position.start,
+    'should get a side'
+  )
 
-  t.test('pointStart', (t) => {
-    t.same(
-      pointStart(properties),
-      properties.position.start,
-      'should get a side'
-    )
+  assert.deepEqual(
+    pointStart(noFields),
+    generated,
+    'should return an empty point without fields'
+  )
 
-    t.same(
-      pointStart(noFields),
-      generated,
-      'should return an empty point without fields'
-    )
+  assert.deepEqual(
+    pointStart(noPoints),
+    generated,
+    'should return an empty point without points'
+  )
 
-    t.same(
-      pointStart(noPoints),
-      generated,
-      'should return an empty point without points'
-    )
+  assert.deepEqual(
+    pointStart(noPosition),
+    generated,
+    'should return an empty point without position'
+  )
 
-    t.same(
-      pointStart(noPosition),
-      generated,
-      'should return an empty point without position'
-    )
+  assert.deepEqual(
+    pointStart(),
+    generated,
+    'should return an empty point without node'
+  )
+})
 
-    t.same(pointStart(), generated, 'should return an empty point without node')
+test('pointEnd', () => {
+  assert.deepEqual(
+    pointEnd(properties),
+    properties.position.end,
+    'should get a side'
+  )
 
-    t.end()
-  })
+  assert.deepEqual(
+    pointEnd(noFields),
+    generated,
+    'should return an empty point without fields'
+  )
 
-  t.test('pointEnd', (t) => {
-    t.same(pointEnd(properties), properties.position.end, 'should get a side')
+  assert.deepEqual(
+    pointEnd(noPoints),
+    generated,
+    'should return an empty point without points'
+  )
 
-    t.same(
-      pointEnd(noFields),
-      generated,
-      'should return an empty point without fields'
-    )
+  assert.deepEqual(
+    pointEnd(noPosition),
+    generated,
+    'should return an empty point without position'
+  )
 
-    t.same(
-      pointEnd(noPoints),
-      generated,
-      'should return an empty point without points'
-    )
-
-    t.same(
-      pointEnd(noPosition),
-      generated,
-      'should return an empty point without position'
-    )
-
-    t.same(pointEnd(), generated, 'should return an empty point without node')
-
-    t.end()
-  })
-
-  t.end()
+  assert.deepEqual(
+    pointEnd(),
+    generated,
+    'should return an empty point without node'
+  )
 })
