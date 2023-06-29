@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import {position, pointStart, pointEnd} from './index.js'
-import * as mod from './index.js'
+import {pointEnd, pointStart, position} from './index.js'
 
 const properties = {
   type: 'a',
@@ -17,172 +16,159 @@ const noPoints = {type: 'c', position: {}}
 
 const noPosition = {type: 'd'}
 
-test('core', () => {
-  assert.deepEqual(
-    Object.keys(mod).sort(),
-    ['pointEnd', 'pointStart', 'position'],
-    'should expose the public api'
-  )
+test('core', async function (t) {
+  await t.test('should expose the public api', async function () {
+    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+      'pointEnd',
+      'pointStart',
+      'position'
+    ])
+  })
 })
 
-test('position', () => {
-  assert.deepEqual(
-    position(properties),
-    properties.position,
-    'should get the whole position'
-  )
+test('position', async function (t) {
+  await t.test('should get the whole position', async function () {
+    assert.deepEqual(position(properties), properties.position)
+  })
 
-  assert.deepEqual(
-    position({
-      type: 'x',
-      position: {
-        start: {line: 0, column: 0, offset: -1},
-        end: {line: 0, column: 0, offset: -1}
+  await t.test('should not get too low values', async function () {
+    assert.deepEqual(
+      position({
+        type: 'x',
+        position: {
+          start: {line: 0, column: 0, offset: -1},
+          end: {line: 0, column: 0, offset: -1}
+        }
+      }),
+      undefined
+    )
+  })
+
+  await t.test('should support points w/o `offset`', async function () {
+    assert.deepEqual(
+      position({
+        type: 'x',
+        position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
+      }),
+      {
+        start: {line: 1, column: 1, offset: undefined},
+        end: {line: 1, column: 2, offset: undefined}
       }
-    }),
-    undefined,
-    'should not get too low values'
+    )
+  })
+
+  await t.test('should return nothing when without fields', async function () {
+    assert.deepEqual(position(noFields), undefined)
+  })
+
+  await t.test('should return nothing when without points', async function () {
+    assert.deepEqual(position(noPoints), undefined)
+  })
+
+  await t.test(
+    'should return nothing when without position',
+    async function () {
+      assert.deepEqual(position(noPosition), undefined)
+    }
   )
 
-  assert.deepEqual(
-    position({
-      type: 'x',
-      position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
-    }),
-    {
-      start: {line: 1, column: 1, offset: undefined},
-      end: {line: 1, column: 2, offset: undefined}
-    },
-    'should support points w/o `offset`'
-  )
-
-  assert.deepEqual(
-    position(noFields),
-    undefined,
-    'should return nothing when without fields'
-  )
-
-  assert.deepEqual(
-    position(noPoints),
-    undefined,
-    'should return nothing when without points'
-  )
-
-  assert.deepEqual(
-    position(noPosition),
-    undefined,
-    'should return nothing when without position'
-  )
-
-  assert.deepEqual(
-    position(),
-    undefined,
-    'should return nothing when without node'
-  )
+  await t.test('should return nothing when without node', async function () {
+    assert.deepEqual(position(), undefined)
+  })
 })
 
-test('pointStart', () => {
-  assert.deepEqual(
-    pointStart(properties),
-    properties.position.start,
-    'should get a side'
+test('pointStart', async function (t) {
+  await t.test('should get a side', async function () {
+    assert.deepEqual(pointStart(properties), properties.position.start)
+  })
+
+  await t.test('should not get too low values', async function () {
+    assert.deepEqual(
+      pointStart({
+        type: 'x',
+        position: {
+          start: {line: 0, column: 0, offset: -1},
+          end: {line: 0, column: 0, offset: -1}
+        }
+      }),
+      undefined
+    )
+  })
+
+  await t.test('should support points w/o `offset`', async function () {
+    assert.deepEqual(
+      pointStart({
+        type: 'x',
+        position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
+      }),
+      {line: 1, column: 1, offset: undefined}
+    )
+  })
+
+  await t.test('should return nothing when without fields', async function () {
+    assert.deepEqual(pointStart(noFields), undefined)
+  })
+
+  await t.test('should return nothing when without points', async function () {
+    assert.deepEqual(pointStart(noPoints), undefined)
+  })
+
+  await t.test(
+    'should return nothing when without position',
+    async function () {
+      assert.deepEqual(pointStart(noPosition), undefined)
+    }
   )
 
-  assert.deepEqual(
-    pointStart({
-      type: 'x',
-      position: {
-        start: {line: 0, column: 0, offset: -1},
-        end: {line: 0, column: 0, offset: -1}
-      }
-    }),
-    undefined,
-    'should not get too low values'
-  )
-
-  assert.deepEqual(
-    pointStart({
-      type: 'x',
-      position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
-    }),
-    {line: 1, column: 1, offset: undefined},
-    'should support points w/o `offset`'
-  )
-
-  assert.deepEqual(
-    pointStart(noFields),
-    undefined,
-    'should return nothing when without fields'
-  )
-
-  assert.deepEqual(
-    pointStart(noPoints),
-    undefined,
-    'should return nothing when without points'
-  )
-
-  assert.deepEqual(
-    pointStart(noPosition),
-    undefined,
-    'should return nothing when without position'
-  )
-
-  assert.deepEqual(
-    pointStart(),
-    undefined,
-    'should return nothing when without node'
-  )
+  await t.test('should return nothing when without node', async function () {
+    assert.deepEqual(pointStart(), undefined)
+  })
 })
 
-test('pointEnd', () => {
-  assert.deepEqual(
-    pointEnd(properties),
-    properties.position.end,
-    'should get a side'
+test('pointEnd', async function (t) {
+  await t.test('should get a side', async function () {
+    assert.deepEqual(pointEnd(properties), properties.position.end)
+  })
+
+  await t.test('should not get too low values', async function () {
+    assert.deepEqual(
+      pointEnd({
+        type: 'x',
+        position: {
+          start: {line: 0, column: 0, offset: -1},
+          end: {line: 0, column: 0, offset: -1}
+        }
+      }),
+      undefined
+    )
+  })
+
+  await t.test('should support points w/o `offset`', async function () {
+    assert.deepEqual(
+      pointEnd({
+        type: 'x',
+        position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
+      }),
+      {line: 1, column: 2, offset: undefined}
+    )
+  })
+
+  await t.test('should return nothing when without fields', async function () {
+    assert.deepEqual(pointEnd(noFields), undefined)
+  })
+
+  await t.test('should return nothing when without points', async function () {
+    assert.deepEqual(pointEnd(noPoints), undefined)
+  })
+
+  await t.test(
+    'should return nothing when without position',
+    async function () {
+      assert.deepEqual(pointEnd(noPosition), undefined)
+    }
   )
 
-  assert.deepEqual(
-    pointEnd({
-      type: 'x',
-      position: {
-        start: {line: 0, column: 0, offset: -1},
-        end: {line: 0, column: 0, offset: -1}
-      }
-    }),
-    undefined,
-    'should not get too low values'
-  )
-
-  assert.deepEqual(
-    pointEnd({
-      type: 'x',
-      position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
-    }),
-    {line: 1, column: 2, offset: undefined},
-    'should support points w/o `offset`'
-  )
-
-  assert.deepEqual(
-    pointEnd(noFields),
-    undefined,
-    'should return nothing when without fields'
-  )
-
-  assert.deepEqual(
-    pointEnd(noPoints),
-    undefined,
-    'should return nothing when without points'
-  )
-
-  assert.deepEqual(
-    pointEnd(noPosition),
-    undefined,
-    'should return nothing when without position'
-  )
-
-  assert.deepEqual(
-    pointEnd(),
-    undefined,
-    'should return nothing when without node'
-  )
+  await t.test('should return nothing when without node', async function () {
+    assert.deepEqual(pointEnd(), undefined)
+  })
 })

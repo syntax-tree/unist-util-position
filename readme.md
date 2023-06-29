@@ -57,14 +57,14 @@ npm install unist-util-position
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {position, pointStart, pointEnd} from 'https://esm.sh/unist-util-position@4'
+import {pointEnd, pointStart, position} from 'https://esm.sh/unist-util-position@4'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {position, pointStart, pointEnd} from 'https://esm.sh/unist-util-position@4?bundle'
+  import {pointEnd, pointStart, position} from 'https://esm.sh/unist-util-position@4?bundle'
 </script>
 ```
 
@@ -72,7 +72,7 @@ In browsers with [`esm.sh`][esmsh]:
 
 ```js
 import {fromMarkdown} from 'mdast-util-from-markdown'
-import {position, pointStart, pointEnd} from 'unist-util-position'
+import {pointEnd, pointStart, position} from 'unist-util-position'
 
 const tree = fromMarkdown('# foo\n\n* bar\n')
 
