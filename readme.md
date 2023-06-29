@@ -106,7 +106,7 @@ Get the positional info of `node`.
 
 ###### Returns
 
-Position ([`Position`][unist-position]).
+Position, if valid ([`Position`][unist-position] or `undefined`).
 
 ### `pointEnd(node)`
 
@@ -119,7 +119,7 @@ Get the ending point of `node`.
 
 ###### Returns
 
-Point ([`Point`][unist-point]).
+Point, if valid ([`Point`][unist-point] or `undefined`).
 
 ### `pointStart(node)`
 
@@ -132,7 +132,7 @@ Get the starting point of `node`.
 
 ###### Returns
 
-Point ([`Point`][unist-point]).
+Point, if valid ([`Point`][unist-point] or `undefined`).
 
 ## Types
 

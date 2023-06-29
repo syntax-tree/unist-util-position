@@ -17,8 +17,6 @@ const noPoints = {type: 'c', position: {}}
 
 const noPosition = {type: 'd'}
 
-const generated = {line: null, column: null, offset: null}
-
 test('core', () => {
   assert.deepEqual(
     Object.keys(mod).sort(),
@@ -35,27 +33,51 @@ test('position', () => {
   )
 
   assert.deepEqual(
+    position({
+      type: 'x',
+      position: {
+        start: {line: 0, column: 0, offset: -1},
+        end: {line: 0, column: 0, offset: -1}
+      }
+    }),
+    undefined,
+    'should not get too low values'
+  )
+
+  assert.deepEqual(
+    position({
+      type: 'x',
+      position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
+    }),
+    {
+      start: {line: 1, column: 1, offset: undefined},
+      end: {line: 1, column: 2, offset: undefined}
+    },
+    'should support points w/o `offset`'
+  )
+
+  assert.deepEqual(
     position(noFields),
-    {start: generated, end: generated},
-    'should return an empty position without fields'
+    undefined,
+    'should return nothing when without fields'
   )
 
   assert.deepEqual(
     position(noPoints),
-    {start: generated, end: generated},
-    'should return an empty position without points'
+    undefined,
+    'should return nothing when without points'
   )
 
   assert.deepEqual(
     position(noPosition),
-    {start: generated, end: generated},
-    'should return an empty position without position'
+    undefined,
+    'should return nothing when without position'
   )
 
   assert.deepEqual(
     position(),
-    {start: generated, end: generated},
-    'should return an empty position without node'
+    undefined,
+    'should return nothing when without node'
   )
 })
 
@@ -67,27 +89,48 @@ test('pointStart', () => {
   )
 
   assert.deepEqual(
+    pointStart({
+      type: 'x',
+      position: {
+        start: {line: 0, column: 0, offset: -1},
+        end: {line: 0, column: 0, offset: -1}
+      }
+    }),
+    undefined,
+    'should not get too low values'
+  )
+
+  assert.deepEqual(
+    pointStart({
+      type: 'x',
+      position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
+    }),
+    {line: 1, column: 1, offset: undefined},
+    'should support points w/o `offset`'
+  )
+
+  assert.deepEqual(
     pointStart(noFields),
-    generated,
-    'should return an empty point without fields'
+    undefined,
+    'should return nothing when without fields'
   )
 
   assert.deepEqual(
     pointStart(noPoints),
-    generated,
-    'should return an empty point without points'
+    undefined,
+    'should return nothing when without points'
   )
 
   assert.deepEqual(
     pointStart(noPosition),
-    generated,
-    'should return an empty point without position'
+    undefined,
+    'should return nothing when without position'
   )
 
   assert.deepEqual(
     pointStart(),
-    generated,
-    'should return an empty point without node'
+    undefined,
+    'should return nothing when without node'
   )
 })
 
@@ -99,26 +142,47 @@ test('pointEnd', () => {
   )
 
   assert.deepEqual(
+    pointEnd({
+      type: 'x',
+      position: {
+        start: {line: 0, column: 0, offset: -1},
+        end: {line: 0, column: 0, offset: -1}
+      }
+    }),
+    undefined,
+    'should not get too low values'
+  )
+
+  assert.deepEqual(
+    pointEnd({
+      type: 'x',
+      position: {start: {line: 1, column: 1}, end: {line: 1, column: 2}}
+    }),
+    {line: 1, column: 2, offset: undefined},
+    'should support points w/o `offset`'
+  )
+
+  assert.deepEqual(
     pointEnd(noFields),
-    generated,
-    'should return an empty point without fields'
+    undefined,
+    'should return nothing when without fields'
   )
 
   assert.deepEqual(
     pointEnd(noPoints),
-    generated,
-    'should return an empty point without points'
+    undefined,
+    'should return nothing when without points'
   )
 
   assert.deepEqual(
     pointEnd(noPosition),
-    generated,
-    'should return an empty point without position'
+    undefined,
+    'should return nothing when without position'
   )
 
   assert.deepEqual(
     pointEnd(),
-    generated,
-    'should return an empty point without node'
+    undefined,
+    'should return nothing when without node'
   )
 })
