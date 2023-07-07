@@ -57,14 +57,14 @@ npm install unist-util-position
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {pointEnd, pointStart, position} from 'https://esm.sh/unist-util-position@4'
+import {pointEnd, pointStart, position} from 'https://esm.sh/unist-util-position@5'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {pointEnd, pointStart, position} from 'https://esm.sh/unist-util-position@4?bundle'
+  import {pointEnd, pointStart, position} from 'https://esm.sh/unist-util-position@5?bundle'
 </script>
 ```
 
